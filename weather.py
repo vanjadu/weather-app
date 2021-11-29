@@ -41,7 +41,7 @@ def getWeather(canvas):
 canvas = tk.Tk()
 canvas.geometry('600x500')
 canvas.configure(bg='#000957')
-canvas.title('Vanja\'s Wheather App')
+canvas.title('Vanja\'s Weather App')
 
 f = ('poppins', 15, 'bold')
 t = ('poppins', 35, 'bold')
