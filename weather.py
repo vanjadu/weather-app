@@ -8,10 +8,10 @@ import time
 def getWeather(canvas):
     city = textfield.get()
     # Get your api key at https://openweathermap.org/api
-    api = 'https://api.openweathermap.org/data/2.5/weather?q=' + \
+    api_key = 'https://api.openweathermap.org/data/2.5/weather?q=' + \
         city + '&appid={** Your api key **}'
     # Call all the data you want to display in your app
-    json_data = requests.get(api).json()
+    json_data = requests.get(api_key).json()
     condition = json_data['weather'][0]['main']
     temperature = int(json_data['main']['temp'] - 273.5)
     min_temperature = int(json_data['main']['temp_min'] - 273.5)
