@@ -10,6 +10,7 @@ def getWeather(canvas):
     # Get your api key at https://openweathermap.org/api
     api = 'https://api.openweathermap.org/data/2.5/weather?q=' + \
         city + '&appid={** Your api key **}'
+    # Call all the data you want to display in your app
     json_data = requests.get(api).json()
     condition = json_data['weather'][0]['main']
     temperature = int(json_data['main']['temp'] - 273.5)
@@ -23,6 +24,7 @@ def getWeather(canvas):
     sunset_time = time.strftime('%H:%M:%M', time.gmtime(
         json_data['sys']['sunset'] - 3600))
 
+    # Combine the data you called
     final_info = condition + '\n' + str(temperature) + '°C'
     final_data = '\n' + 'Max temp: ' + \
         str(max_temperature) + '\n' + 'Min temp: ' + \
@@ -31,6 +33,7 @@ def getWeather(canvas):
         '\n' + 'Wind speed: ' + \
         str(wind_speed) + '\n' + 'Sunrise: ' + \
         sunrise_time + '\n' + 'Sunset: ' + sunset_time
+    # Display the data
     label1.config(text=final_info)
     label2.config(text=final_data)
 
